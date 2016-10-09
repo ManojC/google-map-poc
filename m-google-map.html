@@ -1,0 +1,96 @@
+<link rel="import" href="../polymer/polymer.html">
+<link rel="import" href="../google-map/google-map.html">
+<link rel="import" href="../google-map/google-map-marker.html">
+<link rel="import" href="../google-map/google-map-directions.html">
+<!--
+    A comment describing this element
+
+    Example:
+
+        <m-google-map></m-google-map>
+
+    Example:
+
+        <m-google-map>
+          <h2>Hello m-google-map</h2>
+        </m-google-map>
+
+    @demo demo/index.html
+-->
+
+<dom-module id="m-google-map">
+
+        <style>
+            :host {
+                display: block;
+            } 
+            google-map {
+                height: 200px;
+                widows: 400px;
+                margin-top: 10px;
+                border: solid black thin;
+            }
+        </style>
+
+        <template>
+            <google-map-directions 
+                map="{{map1}}"
+                start-address="Parbhani"
+                end-address="Ranisavargaon"
+                api-key="AIzaSyBh5bq7DYOIz3zGl6NSbz5th3hgD5RadB8">
+            </google-map-directions>
+
+            <google-map 
+                map="{{map1}}"
+                latitude="19.261383" 
+                longitude="76.776666"
+                api-key="AIzaSyBh5bq7DYOIz3zGl6NSbz5th3hgD5RadB8">
+                <google-map-marker 
+                    latitude="19.261383" 
+                    longitude="76.776666">
+                </google-map-marker>
+            </google-map>
+
+            <google-map-directions 
+                map="{{map}}"
+                start-address="Parbhani"
+                end-address="Ranisavargaon"
+                api-key="AIzaSyBh5bq7DYOIz3zGl6NSbz5th3hgD5RadB8">
+            </google-map-directions>
+
+            <google-map 
+                map="{{map}}"
+                latitude="19.261383" 
+                longitude="76.776666"
+                api-key="AIzaSyBh5bq7DYOIz3zGl6NSbz5th3hgD5RadB8">
+                <google-map-marker 
+                    latitude="19.261383" 
+                    longitude="76.776666">
+                </google-map-marker>
+            </google-map>
+        </template>
+
+        <script>
+
+            (function () {
+
+                'use strict'
+
+                Polymer({
+
+                    is: 'm-google-map',
+
+                    properties: {
+                        prop1: {
+                            type: String,
+                            value: 'm-google-map',
+                        },
+                    },
+
+                });
+
+                
+            })();
+
+        </script>
+</dom-module>
